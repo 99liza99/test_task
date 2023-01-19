@@ -140,6 +140,7 @@ function appGender() {
 
 function genderNext() {
   $(".chooseGenderM").click(() => {
+    document.getElementById('gender').value = 'man';
     document.querySelector(".chat-content-buttons-gender").style.display =
       "none";
     myMassange("Мужчина");
@@ -150,6 +151,7 @@ function genderNext() {
     scrollDown();
   });
   $(".chooseGenderW").click(() => {
+    document.getElementById('gender').value = 'woman';
     document.querySelector(".chat-content-buttons-gender").style.display =
       "none";
     myMassange("Женщина");
@@ -174,7 +176,7 @@ function appAge() {
     let year = $(".select-year").val();
     if (empty_field != "" && full_month != "" && year != "") {
       let selectS = "" + empty_field + "." + full_month + "." + year + "";
-
+      document.getElementById('birth_date').value = selectS;
       myMassange(selectS);
       $(this).css("display", "none");
       process = true;
@@ -190,12 +192,14 @@ function YsNo() {
     '<div class="chat-content-buttons-gender"><div class="chat-content-buttons-gender-block"><span class="chooseGenderM" id="yeas">ДА</span></div><div class="chat-content-buttons-gender-block"><span class="chooseGenderW" id="no">Нет</span></div></div>'
   );
   $("#yeas").click(() => {
+    document.getElementById('allergy').value = 'yeas';
     $(".chat-content-buttons-gender").css("display", "none");
     myMassange("Да");
     process = true;
     scrollDown();
   });
   $("#no").click(() => {
+    document.getElementById('allergy').value = 'no';
     $(".chat-content-buttons-gender").css("display", "none");
     myMassange("Нет");
     process = true;
